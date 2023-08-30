@@ -1,15 +1,17 @@
 import React from 'react'
 
-function Song() {
+function Song({song, addSongToSetList, deleteSong}) {
+
+
 
     return(
-        <div className="song" onClick={()=>console.log("Song clicked...")}>
-            <img src=""/>
+        <div className="song" onClick={()=> addSongToSetList(song.id)}>
+            <img src={song.image}/>
             <div className="song-info">
-                <h3>SONG</h3>
-                <h4>ARTIST</h4>
+                <h3>{song.song}</h3>
+                <h4>{song.artist}</h4>
             </div>
-            <button onClick={()=> console.log("Delete clicked...")}>X</button>
+            <button onClick={()=> deleteSong(song.id)}>X</button>
         </div>
     );
 }

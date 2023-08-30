@@ -1,12 +1,13 @@
 import React from 'react'
+import Song from './Song';
 
-function SongList() {
+function SongList({songList, addSongToSetList, deleteSong}) {
 
     return(
         <>
         <h2>Song List</h2>
         <div className="song-list">
-            {/** Songs go here... */}
+            {songList.map(song => <Song song={song} key={song.id} addSongToSetList={addSongToSetList} deleteSong={deleteSong} />)}
         </div>
         </>
     );
